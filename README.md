@@ -1,5 +1,14 @@
-# Normal-Depth Diffusion Model
-## RichDreamer: A Generalizable Normal-Depth Diffusion Model for Detail Richness in Text-to-3D
+<p align="center">
+    <br>
+    <img src="https://modelscope.oss-cn-beijing.aliyuncs.com/modelscope.gif" width="400"/>
+    <br>
+    <h1>Normal-Depth Diffusion Model</h1>
+<p>
+
+Normal-Depth Diffusion Model: A Generalizable Normal-Depth Diffusion Model.
+
+如果您熟悉中文，可以阅读[中文版本的README](./README_ZH.md)。
+
 ### Text-to-ND
 ![teaser-nd](assets/text-to-nd-laion.png)
 ### Text-to-ND-MV
@@ -96,7 +105,7 @@ bash ./download_2b-5_aes.sh
 cd -
 ```
 
-2. Download Monocular Video Weights (*Required to train ND model*)
+2. Download Monocular Prior Models' Weight (*Required to train ND model*)
 - NormalBae [scannet.pt](https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/RichDreamer/scannet.pt)
 - Midas3.1 [dpt_beit_large512.pt](https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/RichDreamer/dpt_beit_large_512.pt)
 
