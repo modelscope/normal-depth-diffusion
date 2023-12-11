@@ -1,13 +1,9 @@
 # Normal-Depth Diffusion Model
-RichDreamer: A Generalizable Normal-Depth Diffusion Model for Detail Richness in Text-to-3D
-
-Text-to-ND
-
+## RichDreamer: A Generalizable Normal-Depth Diffusion Model for Detail Richness in Text-to-3D
+### Text-to-ND
 ![teaser-nd](assets/text-to-nd-laion.png)
-
-Text-to-ND-MV
-
-![teaser-nd-mv](assets/nd-mv.jpg)
+### Text-to-ND-MV
+<img src="./assets/nd-mv.jpg" alt="image" width="atuo" height="auto">
 
 ## [Project page](https://lingtengqiu.github.io/RichDreamer/) | [Paper](https://arxiv.org/abs/2311.16918) | [YouTube](https://youtu.be/6gQ1VWiKoc0)
 
@@ -17,15 +13,22 @@ Text-to-ND-MV
 - [ ] Pretrained model: ND-MV-VAE.
 - [ ] Rendered Multi-View Image of Objaverse-dataset.
 
-### News
-- 2023-12-11: Inference codes and pretrained models are released.
+## News
+- 2023-12-11: Inference codes and pretrained models are released. We are working to improve ND-Diffusion Model, stay tuned!.
+
+
+## 3D Generation
+
+
+- This repository only includes the diffusion model and 2D image generation code of RichDreamer paper.
+- For 3D Generation, please check [RichDreamer](https://github.com/modelscope/RichDreamer).
 
 
 ## Preparation for inference
 1. Install requirements using following scripts. 
 ```bash
 conda create -n nd
-conda activate md
+conda activate nd 
 pip install -r requirements.txt
 pip install git+https://github.com/openai/CLIP.git
 pip install git+https://github.com/CompVis/taming-transformers.git
@@ -94,8 +97,8 @@ cd -
 ```
 
 2. Download Monocular Video Weights (*Required to train ND model*)
-- NormalBae [scannet.pt](#)
-- Midas3.1 [dpt_beit_large512.pt](#)
+- NormalBae [scannet.pt](https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/RichDreamer/scannet.pt)
+- Midas3.1 [dpt_beit_large512.pt](https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/RichDreamer/dpt_beit_large_512.pt)
 
 ```bash
 # move the scannet.pt to normalbae Prior Model
@@ -105,7 +108,7 @@ mv dpt_beit_large512.pt ./libs/omnidata_torch/pretrained_models/dpt_beit_large_5
 ```
 
 3. Download rendered Multi-View image of Objaverse-dataset (*Required to train ND-MV and Albedo-MV model*)
-- Download our rendered dataset using a shared [link](#)
+- Download our rendered dataset using a shared [link](#) (*Comming Soon*)
 
 ```bash
 ln -s /path/to/objaverse_dataset mvs_objaverse
@@ -113,7 +116,7 @@ ln -s /path/to/objaverse_dataset mvs_objaverse
 
 ## Training
 ### Training Normal-Depth-VAE Model
-1. Download [pretrained-VAE weights](xx) pretrained on ImageNet.
+1. Download [pretrained-VAE weights](https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/RichDreamer/nd-vae-imgnet.ckpt) pretrained on ImageNet.
 2. Modify the config file in `configs/autoencoder_normal_depth/autoencoder_normal_depth.yaml`, set `model.ckpt_path=/path/to/pretained-VAE weights`
 
 ```bash
@@ -124,7 +127,7 @@ data.params.train.params.curls='path_laion/{00000..${:5 id}.tar' \
 ```
 
 ### Training Normal-Depth-Diffusion Model
-After training and get `Normal-Depth-VAE` Model or you could download it from [ND-VAE](#)
+After training and get `Normal-Depth-VAE` Model or you could download it from [ND-VAE](https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/RichDreamer/nd-vae-laion.ckpt)
 
 ```bash
 # step 1
@@ -141,7 +144,7 @@ bash scripts/train_normald_sd/txt_cond/web_datasets/train_normald_webdatasets_st
 ```
 
 ### Training MultiView-Normal-Depth-Diffusion Model
-After training and get `Normal-Depth-Diffusion` Model or you could download it from [ND](https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/RichDreamer/nd-laion_ema.ckpt),
+After training and get `Normal-Depth-Diffusion` Model or you could download it from [ND](https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/RichDreamer/nd-laion.ckpt),
 
 We provide two versions of MultiView-Normal-Depth Diffusion Model
 
@@ -161,7 +164,7 @@ bash ./scripts/train_normald_sd/txt_cond/objaverse/objaverse_finetune_mvsd-4.sh 
 ```
 
 ### Training MultiView-Depth-Conditioned-Albedo-Diffusion Model
-After training and get `Normal-Depth-Diffusion` Model or you could download it from [ND](https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/RichDreamer/nd-laion_ema.ckpt),
+After training and get `Normal-Depth-Diffusion` Model or you could download it from [ND](https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/RichDreamer/nd-laion.ckpt),
 
 ```bash
 bash scripts/train_abledo/objaverse/objaverse_finetune_mvsd-4.sh --gpus 0,1,2,3,4,5,6,7, model.params.ckpt_path=${Normal-Depth-Diffusion}
