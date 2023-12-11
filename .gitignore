@@ -1,0 +1,95 @@
+# Created by https://www.toptal.com/developers/gitignore/api/python
+# Edit at https://www.toptal.com/developers/gitignore?templates=python
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+# json
+*.json
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+
+# pretrained model weights
+*.ckpt
+*.pt
+*.pth
+*.safetensor
+*.safetensors
+**/*.pth
+**/*.pt
+**/*.ckpt
+**/*.safetensor
+**/*.safetensors
+
+core-0-python3-94846-1684132272
+core-python3-166511-1687325693
+core-python3-182436-1685016927
+core-*
+
+
+# dataset
+clip-score/
+prior_results/
+taming/
+coco/
+ema-only/
+ema-only-laion/
+laion2b-en-ath5/
+laion_art_depth/
+latent_diffusion.egg-info/
+logs/
+ossutil_output/
+outputs/
+process_midas
+sd-1.5/
+debug/
+gallery_show/
+mvs_objaverse
+meta/
+libs/webdataset
+
+**/.ipynb_checkpoints
+pretrained_models
