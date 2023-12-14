@@ -27,7 +27,8 @@ model:
     ckpt_path: '/mnt/cap/lingtengqiu/nd-diffusion/nd-diffusion-weights/nd-vae-imgnet.ckpt'  #pretrained vae-weights on imgnet
     using_rgb: False # normal+depth
     prior_model:
-        target: libs.omnidata_torch.lib.midas.MidasBatchDetector
+        #target: libs.omnidata_torch.lib.midas.MidasBatchDetector
+        target: libs.omnidata_torch.lib.midas_31.MidasBatchDetector  # update to midas-3_1
     prior_normal:
         target: libs.ControlNet-v1-1-nightly.annotator.normalbae.NormalBaeBatchDetector
 data:

@@ -130,8 +130,8 @@ ln -s /path/to/objaverse_dataset mvs_objaverse
 
 ```bash
 # training  VAE datasets
-bash ./scripts/train_vae/train_nd_vae/train_rgbd_vae_webdatasets.sh \ model.ckpt_path=${pretained-VAE weights} \
-data.params.train.params.curls='path_laion/{00000..${:5 id}.tar' \
+bash ./scripts/train_vae/train_nd_vae/train_rgbd_vae_webdatasets.sh \ model.params.ckpt_path=${pretained-VAE weights} \
+data.params.train.params.curls='path_laion/{00000..${:5 end_id}}.tar' \
 --gpus 0,1,2,3,4,5,6,7
 ```
 
@@ -143,13 +143,13 @@ After training and get `Normal-Depth-VAE` Model or you could download it from [N
 export SD-MODEL-PATH=/path/to/sd-1.5
 bash scripts/train_normald_sd/txt_cond/web_datasets/train_normald_webdatasets.sh --gpus 0,1,2,3,4,5,6,7 \
     model.params.first_stage_ckpts=${Normal-Depth-VAE} model.params.ckpt_path=${SD-MODEL-PATH} \
-    data.params.train.params.curls='path_laion/{00000..${:5 id}.tar'
+    data.params.train.params.curls='path_laion/{00000..${:5 end_id}}.tar'
 
 # step 2 modify your step_weights path in ./configs/stable-diffusion/normald/sd_1_5/txt_cond/web_datasets/laion_2b_step2.yaml
 bash scripts/train_normald_sd/txt_cond/web_datasets/train_normald_webdatasets_step2.sh --gpus 0,1,2,3,4,5,6,7 \
     model.params.first_stage_ckpts=${Normal-Depth-VAE} \
     model.params.ckpt_path=${pretrained-step-weights} \
-    data.params.train.params.curls='path_laion/{00000..${:5 id}.tar'
+    data.params.train.params.curls='path_laion/{00000..${:5 end_id}}.tar'
 ```
 
 ### Training MultiView-Normal-Depth-Diffusion Model

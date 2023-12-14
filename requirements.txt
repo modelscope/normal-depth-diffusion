@@ -208,7 +208,7 @@ termcolor==2.3.0
 test-tube==0.7.5
 threadpoolctl==3.2.0
 tifffile==2023.9.26
-timm==0.9.8
+timm==0.6.13
 tokenizers==0.12.1
 toml==0.10.2
 toolz==0.12.0
