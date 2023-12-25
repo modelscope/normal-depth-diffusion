@@ -20,7 +20,7 @@
 - [x] 训练代码  
 - [x] 预训练模型: ND, ND-MV, Albedo-MV
 - [ ] 预训练模型: ND-MV-VAE
-- [ ] Objaverse数据集渲染的多视图图像
+- [x] Objaverse数据集渲染的多视图图像
 
 ## 新闻
 - 2023-12-11: 推理代码和预训练模型发布。
@@ -113,11 +113,17 @@ mv dpt_beit_large512.pt ./libs/omnidata_torch/pretrained_models/dpt_beit_large_5
 ```  
 
 3. 下载Objaverse数据集渲染的多视图图像(*训练ND-MV和Albedo-MV模型所需*)  
-- 使用共享[链接](#)下载我们渲染的数据集 (*即将推出*)
+- 使用脚本下载我们渲染的数据集
 
-```bash   
-ln -s /path/to/objaverse_dataset mvs_objaverse  
-```  
+```bash
+wget https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/aigc3d/valid_paths_v4_cap_filter_thres_28.json
+# 例子: python ./scripts/data/download_objaverse.py ./mvs_objaverse ./valid_paths_v4_cap_filter_thres_28.json 50
+python ./scripts/data/download_objaverse.py /path/to/savedata /path/to/valid_paths_v4_cap_filter_thres_28.json nthreads(eg. 10)
+# 设置一个软连接到你下载的数据地址
+ln -s /path/to/savedata mvs_objaverse
+# 下载对应的文本标注文件
+wget https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/aigc3d/text_captions_cap3d.json
+```
 
 ## 训练
 ### 训练Normal-Depth-VAE模型  

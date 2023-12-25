@@ -20,7 +20,7 @@ Normal-Depth Diffusion Model: A Generalizable Normal-Depth Diffusion Model.
 - [x] Training code.
 - [x] Pretrained model: ND, ND-MV, Albedo-MV.
 - [ ] Pretrained model: ND-MV-VAE.
-- [ ] Rendered Multi-View Image of Objaverse-dataset.
+- [x] Rendered Multi-View Image of Objaverse-dataset.
 
 ## News
 - 2023-12-11: Inference codes and pretrained models are released. We are working to improve ND-Diffusion Model, stay tuned!.
