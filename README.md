@@ -125,6 +125,8 @@ wget https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/aigc3d/valid_p
 python ./scripts/data/download_objaverse.py /path/to/savedata /path/to/valid_paths_v4_cap_filter_thres_28.json nthreads(eg. 10)
 # set up a link if you save data anywhere
 ln -s /path/to/savedata mvs_objaverse
+# caption file
+wget https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/aigc3d/text_captions_cap3d.json
 ```
 
 ## Training
