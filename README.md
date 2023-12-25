@@ -117,10 +117,14 @@ mv dpt_beit_large512.pt ./libs/omnidata_torch/pretrained_models/dpt_beit_large_5
 ```
 
 3. Download rendered Multi-View image of Objaverse-dataset (*Required to train ND-MV and Albedo-MV model*)
-- Download our rendered dataset using a shared [link](#) (*Comming Soon*)
+- Download our rendered dataset using the prepared script
 
 ```bash
-ln -s /path/to/objaverse_dataset mvs_objaverse
+wget https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/aigc3d/valid_paths_v4_cap_filter_thres_28.json
+# Example: python ./scripts/data/download_objaverse.py ./mvs_objaverse ./valid_paths_v4_cap_filter_thres_28.json 50
+python ./scripts/data/download_objaverse.py /path/to/savedata /path/to/valid_paths_v4_cap_filter_thres_28.json nthreads(eg. 10)
+# set up a link if you save data anywhere
+ln -s /path/to/savedata mvs_objaverse
 ```
 
 ## Training
