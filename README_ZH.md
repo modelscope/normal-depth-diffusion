@@ -15,7 +15,7 @@
 
 ![teaser-nd-mv](assets/nd-mv.jpg)
 
-## [项目主页](https://lingtengqiu.github.io/RichDreamer/)| [论文](https://arxiv.org/abs/2311.16918) | [bilibili](https://www.bilibili.com/video/BV1Qb4y1K7Sb/?spm_id_from=888.80997.embed_other.whitelist)
+## [项目主页](https://aigc3d.gitee.io/richdreamer/)| [论文](https://arxiv.org/abs/2311.16918) | [bilibili](https://www.bilibili.com/video/BV1Qb4y1K7Sb/?spm_id_from=888.80997.embed_other.whitelist)
 - [x] 推理代码
 - [x] 训练代码  
 - [x] 预训练模型: ND, ND-MV, Albedo-MV
