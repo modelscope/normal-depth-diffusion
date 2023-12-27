@@ -14,7 +14,7 @@ Normal-Depth Diffusion Model: A Generalizable Normal-Depth Diffusion Model.
 ### Text-to-ND-MV
 <img src="./assets/nd-mv.jpg" alt="image" width="atuo" height="auto">
 
-## [Project page](https://lingtengqiu.github.io/RichDreamer/) | [Paper](https://arxiv.org/abs/2311.16918) | [YouTube](https://youtu.be/6gQ1VWiKoc0)
+## [Project page](https://aigc3d.github.io/richdreamer/) | [Paper](https://arxiv.org/abs/2311.16918) | [YouTube](https://youtu.be/6gQ1VWiKoc0)
 
 - [x] Inference code.
 - [x] Training code.
