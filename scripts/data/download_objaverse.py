@@ -18,7 +18,7 @@ def download_url(item):
             os.system("wget -P {} {}".format(os.path.join(save_dir, item, index + "/"), oss_full_dir))
 
 if __name__=="__main__":
-    assert len(sys.argv) == 3, "eg: python download_objaverse_data.py ./data /path/to/json_file 10"
+    assert len(sys.argv) == 4, "eg: python download_objaverse_data.py ./data /path/to/json_file 10"
     save_dir = str(sys.argv[1])
     json_file = str(sys.argv[2])
     n_threads = int(sys.argv[3])
