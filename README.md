@@ -63,7 +63,7 @@ python tools/download_models/download_nd_models.py
 ## Inference (Sampling)
 we provide a script for sampling
 ```bash
-python demo_inference.sh
+sh demo_inference.sh
 ```
 Or use the following detailed instructions:
 
